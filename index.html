@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="ORANGE JUICE STUDIO — Sistema de Contenido, Tecnología y Captación Digital. Producción Audiovisual High-End + Campañas en Meta Ads + Automatizaciones con IA."/>
+  <meta name="theme-color" content="#0A0A0A"/>
+  <title>ORANGE JUICE STUDIO | Sistema de Captación Digital</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+
+    /* Hero gradient background */
+    .hero-bg {
+      background: radial-gradient(ellipse at 20% 50%, rgba(232,101,10,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.03) 0%, transparent 50%),
+                  #0A0A0A;
+    }
+
+    /* Grid lines overlay */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    /* Animated underline for nav links */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #E8650A;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Card glow on hover */
+    .value-card:hover {
+      box-shadow: 0 0 40px rgba(232,101,10,0.08);
+    }
+
+    /* Scroll indicator */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+    .scroll-hint { animation: bounce 2s infinite; }
+
+    /* Form inputs */
+    .form-input:focus { outline: none; }
+    select option { background: #1A1A1A; color: #F5F4F0; }
+
+    /* CTA pulse */
+    @keyframes pulse-orange {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(232,101,10,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(232,101,10,0); }
+    }
+    .cta-pulse { animation: pulse-orange 3s infinite; }
+
+    /* Portfolio overlay */
+    .portfolio-card .overlay {
+      background: linear-gradient(to top, rgba(10,10,10,0.8) 0%, transparent 60%);
+    }
+
+    /* Sticky nav shadow on scroll */
+    .nav-scrolled { box-shadow: 0 1px 40px rgba(0,0,0,0.8); }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            orange: "#E8650A",
+            "dark-base": "#0A0A0A",
+            "dark-card": "#1A1A1A",
+            "dark-border": "rgba(245,244,240,0.1)",
+            "bone": "#F5F4F0",
+            "muted": "#9A8E88",
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          maxWidth: { "site": "1440px" },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-[#0A0A0A] text-[#F5F4F0] antialiased">
+
+<!-- ═══════════════════════════════════════════ NAVBAR ══ -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-[#0A0A0A]/90 backdrop-blur-md">
+  <div class="max-w-site mx-auto px-6 md:px-20 flex items-center justify-between h-20">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2 group">
+      <span class="w-2 h-2 rounded-full bg-[#E8650A] group-hover:scale-150 transition-transform duration-300"></span>
+      <span class="text-sm font-bold tracking-[0.15em] uppercase text-[#F5F4F0]">Orange Juice Studio</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#servicios" class="nav-link text-xs font-semibold uppercase tracking-widest text-[#9A8E88] hover:text-[#F5F4F0] transition-colors">Servicios</a>
+      <a href="#precios"   class="nav-link text-xs font-semibold uppercase tracking-widest text-[#9A8E88] hover:text-[#F5F4F0] transition-colors">Precios</a>
+      <a href="#trabajo"   class="nav-link text-xs font-semibold uppercase tracking-widest text-[#9A8E88] hover:text-[#F5F4F0] transition-colors">Portafolio</a>
+    </div>
+
+    <!-- CTA desktop -->
+    <a href="#auditoria"
+       class="hidden md:inline-flex items-center gap-2 bg-[#E8650A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-6 py-3 hover:bg-[#c95508] transition-all duration-300">
+      Auditoría Gratis
+    </a>
+
+    <!-- Hamburger mobile -->
+    <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
+      <span class="w-6 h-px bg-[#F5F4F0] transition-all duration-300" id="bar1"></span>
+      <span class="w-6 h-px bg-[#F5F4F0] transition-all duration-300" id="bar2"></span>
+      <span class="w-6 h-px bg-[#F5F4F0] transition-all duration-300" id="bar3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden flex-col bg-[#0A0A0A] border-t border-white/5 px-6 py-6 gap-6">
+    <a href="#servicios" class="mobile-link text-sm font-semibold uppercase tracking-widest text-[#9A8E88]">Servicios</a>
+    <a href="#precios"   class="mobile-link text-sm font-semibold uppercase tracking-widest text-[#9A8E88]">Precios</a>
+    <a href="#trabajo"   class="mobile-link text-sm font-semibold uppercase tracking-widest text-[#9A8E88]">Portafolio</a>
+    <a href="#auditoria" class="mobile-link bg-[#E8650A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-6 py-4 text-center">
+      Auditoría Gratis
+    </a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════ HERO ══ -->
+<section class="hero-bg relative min-h-screen flex items-center pt-20 overflow-hidden">
+  <div class="relative z-10 max-w-site mx-auto px-6 md:px-20 py-32 md:py-40 w-full">
+
+    <!-- Label -->
+    <div class="flex items-center gap-3 mb-10">
+      <span class="w-8 h-px bg-[#E8650A]"></span>
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A]">Sistema de Captación Digital</span>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-[#F5F4F0] leading-[1.05] tracking-tight max-w-5xl mb-8">
+      No vendemos videos.<br/>
+      <span class="text-[#E8650A]">Construimos sistemas</span><br/>
+      que atraen clientes.
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-lg md:text-xl text-[#9A8E88] max-w-2xl mb-12 leading-relaxed">
+      Producción Audiovisual High-End &nbsp;+&nbsp; Campañas en Meta Ads &nbsp;+&nbsp; Automatizaciones con IA —
+      todo bajo un mismo sistema orientado a resultados.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="#auditoria"
+         class="cta-pulse inline-flex items-center justify-center gap-3 bg-[#E8650A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-10 py-5 hover:bg-[#c95508] transition-all duration-300">
+        Agendar Auditoría Gratis
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+      <a href="#trabajo"
+         class="inline-flex items-center justify-center gap-3 border border-white/10 text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-10 py-5 hover:border-[#E8650A] transition-all duration-300">
+        Ver Portafolio
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="flex flex-wrap gap-10 mt-20 pt-10 border-t border-white/5">
+      <div>
+        <p class="text-3xl font-black text-[#F5F4F0]">100%</p>
+        <p class="text-xs text-[#9A8E88] uppercase tracking-widest mt-1">Orientado a resultados</p>
+      </div>
+      <div>
+        <p class="text-3xl font-black text-[#F5F4F0]">3-en-1</p>
+        <p class="text-xs text-[#9A8E88] uppercase tracking-widest mt-1">Producción + Pauta + IA</p>
+      </div>
+      <div>
+        <p class="text-3xl font-black text-[#E8650A]">$2,999</p>
+        <p class="text-xs text-[#9A8E88] uppercase tracking-widest mt-1">MXN/mes precio lanzamiento</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-hint opacity-30">
+    <span class="material-symbols-outlined text-[#F5F4F0] text-2xl">keyboard_arrow_down</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ VALUE ENGINE ══ -->
+<section class="py-32 md:py-40 px-6 md:px-20 max-w-site mx-auto" id="servicios">
+
+  <!-- Section label -->
+  <div class="flex items-center gap-3 mb-16">
+    <span class="w-8 h-px bg-[#E8650A]"></span>
+    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A]">El Motor</span>
+  </div>
+
+  <h2 class="text-3xl md:text-5xl font-black text-[#F5F4F0] leading-tight mb-20 max-w-2xl">
+    Un sistema completo. Tres pilares que trabajan en conjunto.
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
+
+    <!-- Pilar 1 -->
+    <div class="value-card bg-[#0A0A0A] p-10 md:p-14 group hover:bg-[#1A1A1A] transition-all duration-500 border border-transparent hover:border-[#E8650A]/30">
+      <div class="w-12 h-12 border border-[#E8650A]/30 flex items-center justify-center mb-8 group-hover:border-[#E8650A] transition-colors duration-300">
+        <span class="material-symbols-outlined text-[#E8650A] text-2xl" style="font-variation-settings:'FILL' 1">movie</span>
+      </div>
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A] mb-4 block">01</span>
+      <h3 class="text-xl font-bold text-[#F5F4F0] mb-4">Contenido</h3>
+      <p class="text-[#9A8E88] leading-relaxed text-sm">
+        Producción cinematográfica que para el scroll. No solo "hacemos videos bonitos" — creamos activos visuales diseñados para convertir audiencias frías en clientes interesados.
+      </p>
+    </div>
+
+    <!-- Pilar 2 -->
+    <div class="value-card bg-[#0A0A0A] p-10 md:p-14 group hover:bg-[#1A1A1A] transition-all duration-500 border border-transparent hover:border-[#E8650A]/30">
+      <div class="w-12 h-12 border border-[#E8650A]/30 flex items-center justify-center mb-8 group-hover:border-[#E8650A] transition-colors duration-300">
+        <span class="material-symbols-outlined text-[#E8650A] text-2xl" style="font-variation-settings:'FILL' 1">campaign</span>
+      </div>
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A] mb-4 block">02</span>
+      <h3 class="text-xl font-bold text-[#F5F4F0] mb-4">Campañas</h3>
+      <p class="text-[#9A8E88] leading-relaxed text-sm">
+        Movemos tráfico masivo y calificado con pauta en Meta Ads. Estrategia, segmentación, A/B testing y optimización continua para que cada peso de Ad Spend trabaje al máximo.
+      </p>
+    </div>
+
+    <!-- Pilar 3 -->
+    <div class="value-card bg-[#0A0A0A] p-10 md:p-14 group hover:bg-[#1A1A1A] transition-all duration-500 border border-transparent hover:border-[#E8650A]/30">
+      <div class="w-12 h-12 border border-[#E8650A]/30 flex items-center justify-center mb-8 group-hover:border-[#E8650A] transition-colors duration-300">
+        <span class="material-symbols-outlined text-[#E8650A] text-2xl" style="font-variation-settings:'FILL' 1">filter_alt</span>
+      </div>
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A] mb-4 block">03</span>
+      <h3 class="text-xl font-bold text-[#F5F4F0] mb-4">Captación</h3>
+      <p class="text-[#9A8E88] leading-relaxed text-sm">
+        Convertimos esa atención en leads calificados y listos. Automatizaciones con IA que califican, filtran y entregan prospectos reales a tu equipo de ventas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ MID-PAGE CTA ══ -->
+<div class="bg-[#E8650A] py-16 px-6 md:px-20">
+  <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <p class="text-2xl md:text-3xl font-black text-[#F5F4F0] text-center md:text-left">
+      ¿Listo para escalar tu negocio con contenido que convierte?
+    </p>
+    <a href="#auditoria"
+       class="shrink-0 inline-flex items-center gap-3 bg-[#0A0A0A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-10 py-5 hover:bg-[#1A1A1A] transition-all duration-300">
+      Auditoría Gratis
+      <span class="material-symbols-outlined text-base">arrow_forward</span>
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ PRICING ══ -->
+<section class="py-32 md:py-40 px-6 md:px-20 bg-[#0F0F0F]" id="precios">
+  <div class="max-w-site mx-auto">
+
+    <div class="flex items-center gap-3 mb-16">
+      <span class="w-8 h-px bg-[#E8650A]"></span>
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A]">Inversión</span>
+    </div>
+
+    <h2 class="text-3xl md:text-5xl font-black text-[#F5F4F0] mb-4">Catálogo de Soluciones</h2>
+    <p class="text-[#9A8E88] mb-20 text-lg">Elige tu punto de entrada al sistema.</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- ── Paquete STARTER ── -->
+      <div class="relative border border-[#E8650A] bg-[#1A1A1A] p-10 md:p-14">
+        <div class="absolute top-0 left-10 -translate-y-1/2 bg-[#E8650A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-4 py-1">
+          Precio Lanzamiento
+        </div>
+
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-6">Paquete Starter</span>
+        <h3 class="text-2xl font-black text-[#F5F4F0] mb-2">Sistema de Captación Digital</h3>
+        <p class="text-[#9A8E88] text-sm mb-10">Ideal para negocios que quieren validar y escalar su presencia digital.</p>
+
+        <div class="flex items-end gap-3 mb-10">
+          <span class="text-5xl md:text-6xl font-black text-[#E8650A] leading-none">$2,999</span>
+          <div class="pb-1">
+            <p class="text-xs text-[#9A8E88] line-through">$5,000 MXN</p>
+            <p class="text-sm text-[#9A8E88]">MXN / mes</p>
+          </div>
+        </div>
+
+        <ul class="flex flex-col gap-4 mb-10">
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
+            <span class="text-[#F5F4F0] text-sm">1 sesión mensual de producción en locación (hasta 3h)</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
+            <span class="text-[#F5F4F0] text-sm">Planeación estratégica del contenido</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
+            <span class="text-[#F5F4F0] text-sm">Copys e ideas de campaña con IA</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
+            <span class="text-[#F5F4F0] text-sm">Configuración inicial de campañas en Meta Ads</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
+            <span class="text-[#F5F4F0] text-sm">Optimización de formatos verticales para Reels / Stories</span>
+          </li>
+        </ul>
+
+        <p class="text-xs text-[#9A8E88]/60 border-t border-white/5 pt-6 mb-8 leading-relaxed">
+          ⚠️ El presupuesto publicitario (Ad Spend) es provisto directamente por el cliente. La agencia garantiza la entrega de leads calificados; no gestiona cierres de venta finales.
+        </p>
+
+        <a href="#auditoria"
+           class="flex items-center justify-center gap-3 bg-[#E8650A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-8 py-5 hover:bg-[#c95508] transition-all duration-300 w-full">
+          Quiero este sistema
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- ── Paquetes Musicales ── -->
+      <div class="bg-[#1A1A1A] border border-white/5 p-10 md:p-14 flex flex-col">
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-6">Paquetes Musicales</span>
+        <h3 class="text-2xl font-black text-[#F5F4F0] mb-2">Producción para Artistas</h3>
+        <p class="text-[#9A8E88] text-sm mb-10">Videos musicales y visualizers de nivel profesional.</p>
+
+        <div class="flex flex-col gap-6 flex-1">
+          <div class="flex items-center justify-between border-b border-white/5 pb-6">
+            <div>
+              <p class="text-[#F5F4F0] font-semibold">Visualizer</p>
+              <p class="text-xs text-[#9A8E88] mt-1">Entrega digital, formatos 16:9 y 9:16</p>
+            </div>
+            <span class="text-xl font-black text-[#E8650A]">$1,500</span>
+          </div>
+          <div class="flex items-center justify-between border-b border-white/5 pb-6">
+            <div>
+              <p class="text-[#F5F4F0] font-semibold">Video Oficial Básico</p>
+              <p class="text-xs text-[#9A8E88] mt-1">1 locación, concepto simple, edición premium</p>
+            </div>
+            <span class="text-xl font-black text-[#E8650A]">$2,900</span>
+          </div>
+          <div class="flex items-center justify-between border-b border-white/5 pb-6">
+            <div>
+              <p class="text-[#F5F4F0] font-semibold">Video Oficial Estándar</p>
+              <p class="text-xs text-[#9A8E88] mt-1">2 locaciones, dirección de arte, colorización</p>
+            </div>
+            <span class="text-xl font-black text-[#E8650A]">$4,500</span>
+          </div>
+          <div class="flex items-center justify-between pb-6">
+            <div>
+              <p class="text-[#F5F4F0] font-semibold">Video Oficial Pro</p>
+              <p class="text-xs text-[#9A8E88] mt-1">Producción completa, crew, VFX, color grading</p>
+            </div>
+            <span class="text-xl font-black text-[#E8650A]">$8,500</span>
+          </div>
+        </div>
+
+        <p class="text-xs text-[#9A8E88]/50 mb-8">Todos los precios en MXN. Cotización personalizada disponible.</p>
+
+        <a href="#auditoria"
+           class="flex items-center justify-center gap-3 border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-8 py-5 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300 w-full">
+          Cotizar Paquete Musical
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ PORTFOLIO ══ -->
+<section class="py-32 md:py-40 px-6 md:px-20 max-w-site mx-auto" id="trabajo">
+
+  <div class="flex items-center gap-3 mb-16">
+    <span class="w-8 h-px bg-[#E8650A]"></span>
+    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A]">Portafolio</span>
+  </div>
+
+  <!-- Motor de Alto Impacto -->
+  <h2 class="text-3xl md:text-4xl font-black text-[#F5F4F0] mb-4">Motor de Alto Impacto</h2>
+  <p class="text-[#9A8E88] mb-10 text-sm">Videos comerciales · Cobertura de eventos · Conciertos</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-20">
+    <div class="portfolio-card group relative aspect-video bg-[#1A1A1A] overflow-hidden cursor-pointer border border-transparent hover:border-[#E8650A] transition-all duration-300">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#1A1A1A] via-[#0D0D0D] to-[#2A1A0A]"></div>
+      <div class="overlay absolute inset-0"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
+        <div class="w-16 h-16 rounded-full border-2 border-[#F5F4F0]/30 flex items-center justify-center group-hover:border-[#E8650A] transition-colors duration-300">
+          <span class="material-symbols-outlined text-[#F5F4F0] text-3xl" style="font-variation-settings:'FILL' 1">play_arrow</span>
+        </div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88] group-hover:text-[#E8650A] transition-colors">Video Comercial</p>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-white/5 flex items-center justify-between">
+        <span class="text-xs font-bold text-[#F5F4F0] uppercase tracking-widest">Campaña Marca Local</span>
+        <span class="text-xs text-[#9A8E88]">2024</span>
+      </div>
+    </div>
+
+    <div class="portfolio-card group relative aspect-video bg-[#1A1A1A] overflow-hidden cursor-pointer border border-transparent hover:border-[#E8650A] transition-all duration-300">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#111111] via-[#1A1A1A] to-[#0A0A1A]"></div>
+      <div class="overlay absolute inset-0"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
+        <div class="w-16 h-16 rounded-full border-2 border-[#F5F4F0]/30 flex items-center justify-center group-hover:border-[#E8650A] transition-colors duration-300">
+          <span class="material-symbols-outlined text-[#F5F4F0] text-3xl" style="font-variation-settings:'FILL' 1">play_arrow</span>
+        </div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88] group-hover:text-[#E8650A] transition-colors">Cobertura de Evento</p>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-white/5 flex items-center justify-between">
+        <span class="text-xs font-bold text-[#F5F4F0] uppercase tracking-widest">Evento Masivo</span>
+        <span class="text-xs text-[#9A8E88]">2024</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paquetes Musicales -->
+  <h2 class="text-3xl md:text-4xl font-black text-[#F5F4F0] mb-4">Paquetes Musicales</h2>
+  <div class="flex flex-wrap items-center gap-4 mb-10">
+    <span class="text-xs text-[#9A8E88] bg-[#1A1A1A] px-3 py-1 border border-white/5">Visualizer $1,500</span>
+    <span class="text-xs text-[#9A8E88] bg-[#1A1A1A] px-3 py-1 border border-white/5">Básico $2,900</span>
+    <span class="text-xs text-[#9A8E88] bg-[#1A1A1A] px-3 py-1 border border-white/5">Estándar $4,500</span>
+    <span class="text-xs text-[#9A8E88] bg-[#1A1A1A] px-3 py-1 border border-white/5">Pro $8,500</span>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="portfolio-card group relative aspect-[9/16] bg-[#1A1A1A] overflow-hidden cursor-pointer border border-transparent hover:border-[#E8650A] transition-all duration-300">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#1A0A00] to-[#0A0A0A]"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+        <span class="material-symbols-outlined text-[#F5F4F0]/50 text-4xl group-hover:text-[#E8650A] transition-colors" style="font-variation-settings:'FILL' 1">play_circle</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-[#9A8E88]">Visualizer</span>
+      </div>
+    </div>
+    <div class="portfolio-card group relative aspect-[9/16] bg-[#1A1A1A] overflow-hidden cursor-pointer border border-transparent hover:border-[#E8650A] transition-all duration-300">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#1A1A2A] to-[#0A0A0A]"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+        <span class="material-symbols-outlined text-[#F5F4F0]/50 text-4xl group-hover:text-[#E8650A] transition-colors" style="font-variation-settings:'FILL' 1">play_circle</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-[#9A8E88]">Básico</span>
+      </div>
+    </div>
+    <div class="portfolio-card group relative aspect-[9/16] bg-[#1A1A1A] overflow-hidden cursor-pointer border border-transparent hover:border-[#E8650A] transition-all duration-300">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#2A1A0A] to-[#0D0D0D]"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+        <span class="material-symbols-outlined text-[#F5F4F0]/50 text-4xl group-hover:text-[#E8650A] transition-colors" style="font-variation-settings:'FILL' 1">play_circle</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-[#9A8E88]">Estándar</span>
+      </div>
+    </div>
+    <div class="portfolio-card group relative aspect-[9/16] bg-[#1A1A1A] overflow-hidden cursor-pointer border border-transparent hover:border-[#E8650A] transition-all duration-300">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#1A0D1A] to-[#0A0A0A]"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+        <span class="material-symbols-outlined text-[#F5F4F0]/50 text-4xl group-hover:text-[#E8650A] transition-colors" style="font-variation-settings:'FILL' 1">play_circle</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-[#9A8E88]">Pro</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ LEAD CAPTURE FORM ══ -->
+<section class="py-32 md:py-40 bg-[#0F0F0F] border-t border-white/5" id="auditoria">
+  <div class="max-w-[640px] mx-auto px-6 md:px-0">
+
+    <div class="flex items-center gap-3 mb-12">
+      <span class="w-8 h-px bg-[#E8650A]"></span>
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A]">Primer Paso</span>
+    </div>
+
+    <h2 class="text-3xl md:text-5xl font-black text-[#F5F4F0] mb-4">
+      Valida tu Sistema<br/>de Captación — <span class="text-[#E8650A]">es gratis.</span>
+    </h2>
+    <p class="text-[#9A8E88] mb-16 leading-relaxed">
+      Agenda una auditoría de 30 minutos y descubre exactamente qué frena el crecimiento de tu negocio y cómo escalar con contenido y pauta.
+    </p>
+
+    <form id="lead-form" class="flex flex-col gap-10" novalidate>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88]" for="f-name">Nombre completo *</label>
+        <input
+          class="form-input bg-transparent border-0 border-b border-white/10 focus:border-[#E8650A] text-[#F5F4F0] text-base py-3 px-0 placeholder-white/15 transition-colors duration-300"
+          id="f-name" name="name" type="text" placeholder="Juan Pérez" required/>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88]" for="f-business">Nombre del negocio *</label>
+        <input
+          class="form-input bg-transparent border-0 border-b border-white/10 focus:border-[#E8650A] text-[#F5F4F0] text-base py-3 px-0 placeholder-white/15 transition-colors duration-300"
+          id="f-business" name="business" type="text" placeholder="Mi Empresa S.A. de C.V." required/>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88]" for="f-budget">Presupuesto estimado para publicidad *</label>
+        <select
+          class="form-input bg-transparent border-0 border-b border-white/10 focus:border-[#E8650A] text-[#F5F4F0] text-base py-3 px-0 appearance-none transition-colors duration-300 cursor-pointer"
+          id="f-budget" name="budget" required>
+          <option value="" disabled selected class="bg-[#1A1A1A]">Selecciona un rango</option>
+          <option value="menos-3k" class="bg-[#1A1A1A]">Menos de $3,000 MXN/mes</option>
+          <option value="3k-10k"   class="bg-[#1A1A1A]">$3,000 – $10,000 MXN/mes</option>
+          <option value="10k-plus" class="bg-[#1A1A1A]">Más de $10,000 MXN/mes</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88]" for="f-pain">¿Cuál es tu principal dolor de ventas hoy? *</label>
+        <textarea
+          class="form-input bg-transparent border-0 border-b border-white/10 focus:border-[#E8650A] text-[#F5F4F0] text-base py-3 px-0 placeholder-white/15 resize-none transition-colors duration-300"
+          id="f-pain" name="pain" rows="3"
+          placeholder="Ej. No generamos suficientes leads calificados, nuestro contenido no convierte..." required></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="flex items-center justify-center gap-3 bg-[#E8650A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-8 py-6 w-full hover:bg-[#c95508] transition-all duration-300 mt-4">
+        <span class="material-symbols-outlined text-lg">chat</span>
+        Quiero mi Auditoría Gratis → WhatsApp
+      </button>
+
+      <p class="text-xs text-[#9A8E88]/50 text-center -mt-4">
+        Al enviar serás redirigido a WhatsApp. Sin spam. Sin compromiso.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ FOOTER ══ -->
+<footer class="bg-[#0A0A0A] border-t border-white/5 py-16 px-6 md:px-20">
+  <div class="max-w-site mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
+
+    <div class="flex flex-col items-center md:items-start gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#E8650A]"></span>
+        <span class="text-sm font-bold tracking-[0.15em] uppercase text-[#F5F4F0]">Orange Juice Studio</span>
+      </div>
+      <p class="text-xs text-[#9A8E88] tracking-widest">Sistema de Contenido, Tecnología y Captación Digital.</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="#" class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88] hover:text-[#E8650A] transition-colors">Instagram</a>
+      <a href="#" class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88] hover:text-[#E8650A] transition-colors">LinkedIn</a>
+      <a href="#" class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88] hover:text-[#E8650A] transition-colors">Vimeo</a>
+      <a href="#" class="text-xs font-semibold uppercase tracking-widest text-[#9A8E88] hover:text-[#E8650A] transition-colors">YouTube</a>
+    </div>
+
+    <p class="text-xs text-[#9A8E88]/40 text-center md:text-right">
+      © 2024 ORANGE JUICE STUDIO<br/>TODOS LOS DERECHOS RESERVADOS.
+    </p>
+  </div>
+</footer>
+
+<!-- ════════════════════ SCRIPTS ══ -->
+<script>
+  // ── Mobile menu toggle ──────────────────────────────────────
+  const toggle = document.getElementById('menu-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  const bar1   = document.getElementById('bar1');
+  const bar2   = document.getElementById('bar2');
+  const bar3   = document.getElementById('bar3');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    const isOpen = menu.classList.contains('open');
+    bar1.style.transform = isOpen ? 'translateY(6px) rotate(45deg)' : '';
+    bar2.style.opacity   = isOpen ? '0' : '1';
+    bar3.style.transform = isOpen ? 'translateY(-6px) rotate(-45deg)' : '';
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      bar1.style.transform = ''; bar2.style.opacity = '1'; bar3.style.transform = '';
+    });
+  });
+
+  // ── Navbar shadow on scroll ─────────────────────────────────
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 20);
+  });
+
+  // ── WhatsApp form submit ────────────────────────────────────
+  // ⚠️  REEMPLAZA el número con el tuyo (formato: 52XXXXXXXXXX)
+  const WHATSAPP_NUMBER = '521234567890';
+
+  document.getElementById('lead-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name     = document.getElementById('f-name').value.trim();
+    const business = document.getElementById('f-business').value.trim();
+    const budget   = document.getElementById('f-budget').value;
+    const pain     = document.getElementById('f-pain').value.trim();
+
+    if (!name || !business || !budget || !pain) {
+      alert('Por favor completa todos los campos antes de continuar.');
+      return;
+    }
+
+    const budgetLabels = {
+      'menos-3k': 'Menos de $3,000 MXN/mes',
+      '3k-10k':   '$3,000 – $10,000 MXN/mes',
+      '10k-plus': 'Más de $10,000 MXN/mes',
+    };
+
+    const msg = encodeURIComponent(
+      `🟠 *ORANGE JUICE STUDIO — Auditoría Gratis*\n\n` +
+      `*Nombre:* ${name}\n` +
+      `*Negocio:* ${business}\n` +
+      `*Presupuesto Ad Spend:* ${budgetLabels[budget] || budget}\n` +
+      `*Dolor principal:* ${pain}\n\n` +
+      `Hola, me interesa agendar mi auditoría de captación digital gratuita.`
+    );
+
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
