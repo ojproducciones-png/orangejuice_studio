@@ -2,3 +2,12 @@
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Playwright
+.playwright-mcp/
+
+# Screenshots de trabajo
+*.png
+*.jpg
+!assets/images/**
+!portfolio/**

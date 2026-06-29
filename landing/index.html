@@ -83,6 +83,23 @@
     /* Sticky nav shadow on scroll */
     .nav-scrolled { box-shadow: 0 1px 40px rgba(0,0,0,0.8); }
   </style>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1590629725889656');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1590629725889656&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -167,8 +184,8 @@
 
     <!-- Subheadline -->
     <p class="text-lg md:text-xl text-[#9A8E88] max-w-2xl mb-12 leading-relaxed">
-      Producción Audiovisual High-End &nbsp;+&nbsp; Campañas en Meta Ads &nbsp;+&nbsp; Automatizaciones con IA —
-      todo bajo un mismo sistema orientado a resultados.
+      Tu negocio ya tiene algo que vender. El problema es que no suficientes personas lo saben —
+      y las que lo saben, no están tomando acción. Eso es lo que nosotros resolvemos.
     </p>
 
     <!-- CTAs -->
@@ -195,8 +212,8 @@
         <p class="text-xs text-[#9A8E88] uppercase tracking-widest mt-1">Producción + Pauta + IA</p>
       </div>
       <div>
-        <p class="text-3xl font-black text-[#E8650A]">$2,999</p>
-        <p class="text-xs text-[#9A8E88] uppercase tracking-widest mt-1">MXN/mes precio lanzamiento</p>
+        <p class="text-3xl font-black text-[#F5F4F0]">Mérida</p>
+        <p class="text-xs text-[#9A8E88] uppercase tracking-widest mt-1">Yucatán · México</p>
       </div>
     </div>
   </div>
@@ -260,6 +277,88 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════ FLUJO DEL SISTEMA ══ -->
+<section class="py-32 md:py-40 px-6 md:px-20 bg-[#0F0F0F] border-t border-white/5">
+  <div class="max-w-site mx-auto">
+
+    <div class="flex items-center gap-3 mb-16">
+      <span class="w-8 h-px bg-[#E8650A]"></span>
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A]">Cómo funciona</span>
+    </div>
+
+    <h2 class="text-3xl md:text-5xl font-black text-[#F5F4F0] mb-6 max-w-2xl leading-tight">
+      El sistema que convierte atención en clientes.
+    </h2>
+    <p class="text-[#9A8E88] mb-20 text-lg max-w-xl">
+      No vendemos piezas sueltas. Construimos un flujo donde cada etapa alimenta a la siguiente.
+    </p>
+
+    <!-- Flow steps -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-0 relative">
+
+      <!-- Connector line desktop -->
+      <div class="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#E8650A]/30 to-transparent"></div>
+
+      <!-- Paso 1 -->
+      <div class="flex flex-col items-start md:items-center text-left md:text-center gap-6 px-0 md:px-6 pb-12 md:pb-0 border-l-2 md:border-l-0 border-[#E8650A]/20 pl-8 md:pl-0">
+        <div class="relative">
+          <div class="w-20 h-20 bg-[#1A1A1A] border border-[#E8650A]/40 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#E8650A] text-3xl" style="font-variation-settings:'FILL' 1">videocam</span>
+          </div>
+          <span class="absolute -top-3 -right-3 w-6 h-6 bg-[#E8650A] text-[#F5F4F0] text-xs font-black flex items-center justify-center">1</span>
+        </div>
+        <div>
+          <h3 class="text-[#F5F4F0] font-bold text-lg mb-2">Contenido</h3>
+          <p class="text-[#9A8E88] text-sm leading-relaxed">Producimos contenido estratégico que para el scroll y comunica tu propuesta de valor.</p>
+        </div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="flex flex-col items-start md:items-center text-left md:text-center gap-6 px-0 md:px-6 pb-12 md:pb-0 border-l-2 md:border-l-0 border-[#E8650A]/20 pl-8 md:pl-0">
+        <div class="relative">
+          <div class="w-20 h-20 bg-[#1A1A1A] border border-[#E8650A]/40 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#E8650A] text-3xl" style="font-variation-settings:'FILL' 1">ads_click</span>
+          </div>
+          <span class="absolute -top-3 -right-3 w-6 h-6 bg-[#E8650A] text-[#F5F4F0] text-xs font-black flex items-center justify-center">2</span>
+        </div>
+        <div>
+          <h3 class="text-[#F5F4F0] font-bold text-lg mb-2">Campañas</h3>
+          <p class="text-[#9A8E88] text-sm leading-relaxed">Ese contenido trabaja con pauta en Meta Ads para llegar a las personas correctas en el momento exacto.</p>
+        </div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="flex flex-col items-start md:items-center text-left md:text-center gap-6 px-0 md:px-6 pb-12 md:pb-0 border-l-2 md:border-l-0 border-[#E8650A]/20 pl-8 md:pl-0">
+        <div class="relative">
+          <div class="w-20 h-20 bg-[#1A1A1A] border border-[#E8650A]/40 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#E8650A] text-3xl" style="font-variation-settings:'FILL' 1">forum</span>
+          </div>
+          <span class="absolute -top-3 -right-3 w-6 h-6 bg-[#E8650A] text-[#F5F4F0] text-xs font-black flex items-center justify-center">3</span>
+        </div>
+        <div>
+          <h3 class="text-[#F5F4F0] font-bold text-lg mb-2">WhatsApp</h3>
+          <p class="text-[#9A8E88] text-sm leading-relaxed">Automatizamos el flujo de llegada para que cada prospecto llegue calificado, filtrado y listo.</p>
+        </div>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="flex flex-col items-start md:items-center text-left md:text-center gap-6 px-0 md:px-6 pb-0 border-l-2 md:border-l-0 border-[#E8650A] pl-8 md:pl-0">
+        <div class="relative">
+          <div class="w-20 h-20 bg-[#E8650A] border border-[#E8650A] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#F5F4F0] text-3xl" style="font-variation-settings:'FILL' 1">trending_up</span>
+          </div>
+          <span class="absolute -top-3 -right-3 w-6 h-6 bg-[#F5F4F0] text-[#0A0A0A] text-xs font-black flex items-center justify-center">4</span>
+        </div>
+        <div>
+          <h3 class="text-[#E8650A] font-bold text-lg mb-2">Leads</h3>
+          <p class="text-[#9A8E88] text-sm leading-relaxed">Tu equipo recibe clientes potenciales listos para cerrar. Ese es el único resultado que mide el éxito.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════════════════════════ MID-PAGE CTA ══ -->
 <div class="bg-[#E8650A] py-16 px-6 md:px-20">
   <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
@@ -284,108 +383,235 @@
     </div>
 
     <h2 class="text-3xl md:text-5xl font-black text-[#F5F4F0] mb-4">Catálogo de Soluciones</h2>
-    <p class="text-[#9A8E88] mb-20 text-lg">Elige tu punto de entrada al sistema.</p>
+    <p class="text-[#9A8E88] mb-6 text-lg">Elige tu punto de entrada al sistema. Todos los paquetes incluyen producción, estrategia y pauta.</p>
+    <p class="text-xs text-[#9A8E88]/60 mb-20">⚠️ El presupuesto de Ad Spend en Meta Ads es provisto por el cliente. OJ garantiza la entrega de leads calificados, no los cierres de venta.</p>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Retainers mensuales -->
+    <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#9A8E88] mb-10">Retainers Mensuales — Sistema de Captación</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px bg-white/5 mb-6">
 
-      <!-- ── Paquete STARTER ── -->
-      <div class="relative border border-[#E8650A] bg-[#1A1A1A] p-10 md:p-14">
-        <div class="absolute top-0 left-10 -translate-y-1/2 bg-[#E8650A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-4 py-1">
-          Precio Lanzamiento
+      <!-- STARTER -->
+      <div class="relative bg-[#1A1A1A] p-8 flex flex-col border border-transparent hover:border-[#E8650A]/40 transition-all duration-300">
+        <div class="absolute top-0 left-6 -translate-y-1/2 bg-[#E8650A] text-[#F5F4F0] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Lanzamiento</div>
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-4 mt-2">Starter</span>
+        <div class="flex items-end gap-2 mb-1">
+          <span class="text-4xl font-black text-[#F5F4F0] leading-none">$2,999</span>
         </div>
-
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-6">Paquete Starter</span>
-        <h3 class="text-2xl font-black text-[#F5F4F0] mb-2">Sistema de Captación Digital</h3>
-        <p class="text-[#9A8E88] text-sm mb-10">Ideal para negocios que quieren validar y escalar su presencia digital.</p>
-
-        <div class="flex items-end gap-3 mb-10">
-          <span class="text-5xl md:text-6xl font-black text-[#E8650A] leading-none">$2,999</span>
-          <div class="pb-1">
-            <p class="text-xs text-[#9A8E88] line-through">$5,000 MXN</p>
-            <p class="text-sm text-[#9A8E88]">MXN / mes</p>
-          </div>
-        </div>
-
-        <ul class="flex flex-col gap-4 mb-10">
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
-            <span class="text-[#F5F4F0] text-sm">1 sesión mensual de producción en locación (hasta 3h)</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
-            <span class="text-[#F5F4F0] text-sm">Planeación estratégica del contenido</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
-            <span class="text-[#F5F4F0] text-sm">Copys e ideas de campaña con IA</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
-            <span class="text-[#F5F4F0] text-sm">Configuración inicial de campañas en Meta Ads</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-[#E8650A] text-lg mt-0.5">check_circle</span>
-            <span class="text-[#F5F4F0] text-sm">Optimización de formatos verticales para Reels / Stories</span>
-          </li>
+        <p class="text-xs text-[#9A8E88] line-through mb-4">$5,000 MXN/mes</p>
+        <ul class="flex flex-col gap-3 mb-8 flex-1">
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>1 sesión de producción/mes (3h)</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>4 reels + 5–10 fotografías</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Planeación y copys con IA</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Configuración inicial Meta Ads</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Conexión a WhatsApp Business</li>
         </ul>
-
-        <p class="text-xs text-[#9A8E88]/60 border-t border-white/5 pt-6 mb-8 leading-relaxed">
-          ⚠️ El presupuesto publicitario (Ad Spend) es provisto directamente por el cliente. La agencia garantiza la entrega de leads calificados; no gestiona cierres de venta finales.
-        </p>
-
-        <a href="#auditoria"
-           class="flex items-center justify-center gap-3 bg-[#E8650A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-8 py-5 hover:bg-[#c95508] transition-all duration-300 w-full">
-          Quiero este sistema
-          <span class="material-symbols-outlined text-base">arrow_forward</span>
-        </a>
+        <a href="#auditoria" class="text-center border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-4 py-3 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300">Empezar</a>
       </div>
 
-      <!-- ── Paquetes Musicales ── -->
-      <div class="bg-[#1A1A1A] border border-white/5 p-10 md:p-14 flex flex-col">
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-6">Paquetes Musicales</span>
-        <h3 class="text-2xl font-black text-[#F5F4F0] mb-2">Producción para Artistas</h3>
-        <p class="text-[#9A8E88] text-sm mb-10">Videos musicales y visualizers de nivel profesional.</p>
+      <!-- CRECIMIENTO -->
+      <div class="relative bg-[#1A1A1A] p-8 flex flex-col border border-transparent hover:border-[#E8650A]/40 transition-all duration-300">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-4 mt-2">Crecimiento ⭐</span>
+        <div class="flex items-end gap-2 mb-1">
+          <span class="text-4xl font-black text-[#F5F4F0] leading-none">$8,000</span>
+        </div>
+        <p class="text-xs text-[#9A8E88] mb-4">MXN/mes</p>
+        <ul class="flex flex-col gap-3 mb-8 flex-1">
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>2 sesiones de producción/mes</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>8–10 reels + 10–15 fotografías</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Dirección creativa de marca</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Gestión y monitoreo Meta Ads</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Optimización mensual de anuncios</li>
+        </ul>
+        <a href="#auditoria" class="text-center border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-4 py-3 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300">Empezar</a>
+      </div>
 
-        <div class="flex flex-col gap-6 flex-1">
-          <div class="flex items-center justify-between border-b border-white/5 pb-6">
-            <div>
-              <p class="text-[#F5F4F0] font-semibold">Visualizer</p>
-              <p class="text-xs text-[#9A8E88] mt-1">Entrega digital, formatos 16:9 y 9:16</p>
-            </div>
-            <span class="text-xl font-black text-[#E8650A]">$1,500</span>
-          </div>
-          <div class="flex items-center justify-between border-b border-white/5 pb-6">
-            <div>
-              <p class="text-[#F5F4F0] font-semibold">Video Oficial Básico</p>
-              <p class="text-xs text-[#9A8E88] mt-1">1 locación, concepto simple, edición premium</p>
-            </div>
-            <span class="text-xl font-black text-[#E8650A]">$2,900</span>
-          </div>
-          <div class="flex items-center justify-between border-b border-white/5 pb-6">
-            <div>
-              <p class="text-[#F5F4F0] font-semibold">Video Oficial Estándar</p>
-              <p class="text-xs text-[#9A8E88] mt-1">2 locaciones, dirección de arte, colorización</p>
-            </div>
-            <span class="text-xl font-black text-[#E8650A]">$4,500</span>
-          </div>
-          <div class="flex items-center justify-between pb-6">
-            <div>
-              <p class="text-[#F5F4F0] font-semibold">Video Oficial Pro</p>
-              <p class="text-xs text-[#9A8E88] mt-1">Producción completa, crew, VFX, color grading</p>
-            </div>
-            <span class="text-xl font-black text-[#E8650A]">$8,500</span>
-          </div>
+      <!-- PRO (destacado) -->
+      <div class="relative bg-[#E8650A] p-8 flex flex-col">
+        <div class="absolute top-0 left-6 -translate-y-1/2 bg-[#F5F4F0] text-[#0A0A0A] text-[10px] font-black uppercase tracking-widest px-3 py-1">Más rentable 💎</div>
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F5F4F0]/70 block mb-4 mt-2">Pro</span>
+        <div class="flex items-end gap-2 mb-1">
+          <span class="text-4xl font-black text-[#F5F4F0] leading-none">$12,500</span>
+        </div>
+        <p class="text-xs text-[#F5F4F0]/60 mb-4">MXN/mes</p>
+        <ul class="flex flex-col gap-3 mb-8 flex-1">
+          <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">check</span>2 sesiones avanzadas/mes</li>
+          <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">check</span>16–20 reels + 15–20 fotografías</li>
+          <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">check</span>Copywriting persuasivo para conversión</li>
+          <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">check</span>Campañas avanzadas + A/B testing</li>
+          <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">check</span>Automatizaciones WhatsApp Business</li>
+          <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">check</span>Reporte mensual de rendimiento</li>
+        </ul>
+        <a href="#auditoria" class="text-center bg-[#0A0A0A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-4 py-3 hover:bg-[#1A1A1A] transition-all duration-300">Empezar</a>
+      </div>
+
+      <!-- DOMINIO IA -->
+      <div class="relative bg-[#1A1A1A] p-8 flex flex-col border border-transparent hover:border-[#E8650A]/40 transition-all duration-300">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-4 mt-2">Dominio IA 🚀</span>
+        <div class="flex items-end gap-2 mb-1">
+          <span class="text-4xl font-black text-[#F5F4F0] leading-none">$18,000</span>
+        </div>
+        <p class="text-xs text-[#9A8E88] mb-4">– $20,000 MXN/mes</p>
+        <ul class="flex flex-col gap-3 mb-8 flex-1">
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Flujo continuo de producción</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>30–40 contenidos mensuales</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Agentes de IA para contenido</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Embudos automatizados a WhatsApp</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Escalado avanzado de campañas</li>
+          <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Prioridad máxima en entregas</li>
+        </ul>
+        <a href="#auditoria" class="text-center border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-4 py-3 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300">Empezar</a>
+      </div>
+
+    </div>
+
+    <!-- Cobertura de Eventos -->
+    <div class="mt-20">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#9A8E88] mb-2">Coberturas de Eventos y Conciertos</h3>
+          <p class="text-[#F5F4F0] text-xl font-bold max-w-xl">Mientras tu evento sucede, ya tienes contenido listo para publicar.</p>
+        </div>
+        <p class="text-xs text-[#9A8E88] max-w-xs text-right hidden md:block">Producción audiovisual · Contenido para redes en tiempo real · Entregables finales</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px bg-white/5 mb-4">
+
+        <!-- ESSENTIAL -->
+        <div class="bg-[#1A1A1A] p-8 flex flex-col border border-transparent hover:border-[#E8650A]/40 transition-all duration-300">
+          <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-4">Essential</span>
+          <span class="text-4xl font-black text-[#F5F4F0] leading-none mb-1">$4,900</span>
+          <p class="text-xs text-[#9A8E88] mb-6">MXN · pago único</p>
+          <ul class="flex flex-col gap-3 mb-6 flex-1">
+            <li class="text-xs text-[#9A8E88] border-b border-white/5 pb-3 font-semibold text-[#F5F4F0]/50 uppercase tracking-wider">Producción</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Cobertura hasta 2h · 1 camarógrafo</li>
+            <li class="text-xs text-[#9A8E88] border-b border-white/5 pb-3 pt-2 font-semibold text-[#F5F4F0]/50 uppercase tracking-wider">Entregables</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>1 Reel resumen (45–60 seg)</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>2 Historias para publicar</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>5 fotografías editadas · Full HD</li>
+          </ul>
+          <p class="text-[10px] text-[#9A8E88]/50 mb-4">Ideal para: eventos privados, conferencias, inauguraciones</p>
+          <a href="#auditoria" class="text-center border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-4 py-3 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300">Cotizar</a>
         </div>
 
-        <p class="text-xs text-[#9A8E88]/50 mb-8">Todos los precios en MXN. Cotización personalizada disponible.</p>
+        <!-- IMPACT -->
+        <div class="bg-[#1A1A1A] p-8 flex flex-col border border-transparent hover:border-[#E8650A]/40 transition-all duration-300">
+          <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-4">Impact ⭐</span>
+          <span class="text-4xl font-black text-[#F5F4F0] leading-none mb-1">$9,500</span>
+          <p class="text-xs text-[#9A8E88] mb-6">MXN · pago único</p>
+          <ul class="flex flex-col gap-3 mb-6 flex-1">
+            <li class="text-xs text-[#9A8E88] border-b border-white/5 pb-3 font-semibold text-[#F5F4F0]/50 uppercase tracking-wider">Producción</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>1 cámara de video + 1 fotógrafo</li>
+            <li class="text-xs text-[#9A8E88] border-b border-white/5 pb-3 pt-2 font-semibold text-[#F5F4F0]/50 uppercase tracking-wider">Entregables</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>1 Reel principal + 1 Reel corto</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>5–8 Historias para publicar</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>25 fotografías editadas · Full HD</li>
+          </ul>
+          <p class="text-[10px] text-[#9A8E88]/50 mb-4">Ideal para: conciertos, promotores, marcas, eventos empresariales</p>
+          <a href="#auditoria" class="text-center border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-4 py-3 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300">Cotizar</a>
+        </div>
 
-        <a href="#auditoria"
-           class="flex items-center justify-center gap-3 border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-8 py-5 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300 w-full">
-          Cotizar Paquete Musical
-          <span class="material-symbols-outlined text-base">arrow_forward</span>
-        </a>
+        <!-- PRO EVENTOS (destacado) -->
+        <div class="relative bg-[#1A1A1A] p-8 flex flex-col border border-[#E8650A]/50">
+          <div class="absolute top-0 left-6 -translate-y-1/2 bg-[#E8650A] text-[#F5F4F0] text-[10px] font-black uppercase tracking-widest px-3 py-1">Más completo</div>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-4 mt-2">Pro</span>
+          <span class="text-4xl font-black text-[#F5F4F0] leading-none mb-1">$14,900</span>
+          <p class="text-xs text-[#9A8E88] mb-6">MXN · pago único</p>
+          <ul class="flex flex-col gap-3 mb-6 flex-1">
+            <li class="text-xs text-[#9A8E88] border-b border-white/5 pb-3 font-semibold text-[#F5F4F0]/50 uppercase tracking-wider">Producción</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>2 cámaras · 1 fotógrafo · Dirección AV</li>
+            <li class="text-xs text-[#9A8E88] border-b border-white/5 pb-3 pt-2 font-semibold text-[#F5F4F0]/50 uppercase tracking-wider">Entregables</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>Aftermovie profesional</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>2 Reels + 10 Historias para publicar</li>
+            <li class="flex items-start gap-2 text-xs text-[#9A8E88]"><span class="material-symbols-outlined text-[#E8650A] text-sm mt-0.5">check</span>40 fotografías editadas · 4K</li>
+          </ul>
+          <p class="text-[10px] text-[#9A8E88]/50 mb-4">Ideal para: festivales, eventos masivos, ayuntamientos</p>
+          <a href="#auditoria" class="text-center border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-4 py-3 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300">Cotizar</a>
+        </div>
+
+        <!-- LIVE EXPERIENCE -->
+        <div class="bg-[#E8650A] p-8 flex flex-col relative">
+          <div class="absolute top-0 left-6 -translate-y-1/2 bg-[#F5F4F0] text-[#0A0A0A] text-[10px] font-black uppercase tracking-widest px-3 py-1">Contenido en vivo 👑</div>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F5F4F0]/70 block mb-4 mt-2">Live Experience</span>
+          <span class="text-4xl font-black text-[#F5F4F0] leading-none mb-1">$22,000</span>
+          <p class="text-xs text-[#F5F4F0]/60 mb-6">MXN · pago único</p>
+          <ul class="flex flex-col gap-3 mb-6 flex-1">
+            <li class="text-xs text-[#F5F4F0]/60 border-b border-white/20 pb-3 font-semibold uppercase tracking-wider">Producción</li>
+            <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">check</span>2 cámaras · Fotógrafo · Drone</li>
+            <li class="text-xs text-[#F5F4F0]/60 border-b border-white/20 pb-3 pt-2 font-semibold uppercase tracking-wider">Entregables · EN TIEMPO REAL</li>
+            <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">bolt</span><strong>2–3 Reels entregados durante el evento</strong></li>
+            <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">bolt</span><strong>12–15 Historias para publicar en vivo</strong></li>
+            <li class="flex items-start gap-2 text-xs text-[#F5F4F0]/90"><span class="material-symbols-outlined text-[#F5F4F0] text-sm mt-0.5">check</span>Aftermovie + 60 fotos editadas · 4K</li>
+          </ul>
+          <p class="text-[10px] text-[#F5F4F0]/60 mb-4">Ideal para: ferias, festivales, gobiernos, eventos internacionales</p>
+          <a href="#auditoria" class="text-center bg-[#0A0A0A] text-[#F5F4F0] text-xs font-bold uppercase tracking-widest px-4 py-3 hover:bg-[#1A1A1A] transition-all duration-300">Cotizar</a>
+        </div>
+
+      </div>
+
+      <!-- Add-ons -->
+      <div class="bg-[#1A1A1A] border border-white/5 p-6 md:p-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#9A8E88] mb-6">Servicios adicionales (add-ons)</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="flex justify-between items-center gap-2 text-xs border-b border-white/5 pb-3"><span class="text-[#9A8E88]">Drone</span><span class="text-[#E8650A] font-bold">+$1,500</span></div>
+          <div class="flex justify-between items-center gap-2 text-xs border-b border-white/5 pb-3"><span class="text-[#9A8E88]">Hora adicional</span><span class="text-[#E8650A] font-bold">+$1,500</span></div>
+          <div class="flex justify-between items-center gap-2 text-xs border-b border-white/5 pb-3"><span class="text-[#9A8E88]">Fotógrafo adicional</span><span class="text-[#E8650A] font-bold">+$1,800</span></div>
+          <div class="flex justify-between items-center gap-2 text-xs border-b border-white/5 pb-3"><span class="text-[#9A8E88]">Camarógrafo adicional</span><span class="text-[#E8650A] font-bold">+$2,000</span></div>
+          <div class="flex justify-between items-center gap-2 text-xs border-b border-white/5 pb-3"><span class="text-[#9A8E88]">Edición express 24h</span><span class="text-[#E8650A] font-bold">+$1,500</span></div>
+          <div class="flex justify-between items-center gap-2 text-xs border-b border-white/5 pb-3"><span class="text-[#9A8E88]">Reel adicional</span><span class="text-[#E8650A] font-bold">+$700</span></div>
+          <div class="flex justify-between items-center gap-2 text-xs border-b border-white/5 pb-3"><span class="text-[#9A8E88]">Aftermovie adicional</span><span class="text-[#E8650A] font-bold">+$2,000</span></div>
+          <div class="flex justify-between items-center gap-2 text-xs border-b border-white/5 pb-3"><span class="text-[#9A8E88]">Backstage</span><span class="text-[#E8650A] font-bold">+$1,200</span></div>
+        </div>
       </div>
     </div>
+
+    <!-- Paquetes Musicales -->
+    <div class="mt-20">
+      <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#9A8E88] mb-10">Producción Musical — The Orange Tape</h3>
+      <div class="bg-[#1A1A1A] border border-white/5 p-10 md:p-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8650A] block mb-6">Paquetes Musicales</span>
+            <h3 class="text-2xl font-black text-[#F5F4F0] mb-2">Producción para Artistas</h3>
+            <p class="text-[#9A8E88] text-sm mb-0">Videos musicales y visualizers de nivel profesional para artistas emergentes y consolidados.</p>
+          </div>
+          <div class="flex flex-col gap-5">
+            <div class="flex items-center justify-between border-b border-white/5 pb-5">
+              <div>
+                <p class="text-[#F5F4F0] font-semibold text-sm">Visualizer</p>
+                <p class="text-xs text-[#9A8E88] mt-1">Entrega digital, formatos 16:9 y 9:16</p>
+              </div>
+              <span class="text-xl font-black text-[#E8650A]">$1,500</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-white/5 pb-5">
+              <div>
+                <p class="text-[#F5F4F0] font-semibold text-sm">Video Oficial Básico</p>
+                <p class="text-xs text-[#9A8E88] mt-1">1 locación, concepto simple, edición premium</p>
+              </div>
+              <span class="text-xl font-black text-[#E8650A]">$2,900</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-white/5 pb-5">
+              <div>
+                <p class="text-[#F5F4F0] font-semibold text-sm">Video Oficial Estándar</p>
+                <p class="text-xs text-[#9A8E88] mt-1">2 locaciones, dirección de arte, colorización</p>
+              </div>
+              <span class="text-xl font-black text-[#E8650A]">$4,500</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-[#F5F4F0] font-semibold text-sm">Video Oficial Pro</p>
+                <p class="text-xs text-[#9A8E88] mt-1">Producción completa, crew, VFX, color grading</p>
+              </div>
+              <span class="text-xl font-black text-[#E8650A]">$8,500</span>
+            </div>
+            <a href="#auditoria" class="flex items-center justify-center gap-3 border border-[#E8650A] text-[#E8650A] text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-[#E8650A] hover:text-[#F5F4F0] transition-all duration-300 mt-4">
+              Cotizar Paquete Musical
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -560,7 +786,7 @@
     </div>
 
     <p class="text-xs text-[#9A8E88]/40 text-center md:text-right">
-      © 2024 ORANGE JUICE STUDIO<br/>TODOS LOS DERECHOS RESERVADOS.
+      © 2026 ORANGE JUICE STUDIO<br/>TODOS LOS DERECHOS RESERVADOS.
     </p>
   </div>
 </footer>
@@ -625,6 +851,14 @@
       `*Dolor principal:* ${pain}\n\n` +
       `Hola, me interesa agendar mi auditoría de captación digital gratuita.`
     );
+
+    // Evento Lead para Meta Pixel
+    fbq('track', 'Lead', {
+      content_name: 'Auditoria Gratis',
+      content_category: 'Retainer',
+      value: 2999,
+      currency: 'MXN'
+    });
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
   });
