@@ -92,14 +92,12 @@ orange-juice-studio/
 - Primer calendario de contenido mensual
 
 ### 📋 Pendiente
+- [ ] Configurar dominio personalizado (actualmente en *.vercel.app)
 - [ ] Agregar material de portafolio real (imágenes y videos)
 - [ ] Conectar links de redes sociales en footer de landing
 - [ ] Crear primer calendario de contenido (julio 2026)
 - [ ] Crear primeros 5 posts para arrancar redes
 - [ ] Configurar Meta Business Suite
-- [ ] Conectar píxel de Meta a la landing
-- [ ] Deploy de landing (GitHub Pages o Netlify)
-- [ ] Configurar dominio personalizado
 - [ ] Planear y lanzar primera campaña de Meta Ads
 
 ---
