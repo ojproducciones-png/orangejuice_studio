@@ -1,9 +1,4 @@
 {
-  "outputDirectory": "landing",
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs20.x"
-    }
-  }
+  "outputDirectory": "landing"
 }
 
