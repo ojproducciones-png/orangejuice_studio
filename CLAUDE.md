@@ -4,6 +4,11 @@
 - Email: ojproducciones@hotmail.com
 - WhatsApp: +52 999 392 8714
 
+## Link Oficial (Landing)
+- **https://orangejuicestudio.vercel.app** ← link principal para compartir/vender
+- Proyecto en Vercel: `orangejuice` (team `oj-studio`)
+- Deploy automático en cada push a `main` (integración Git de Vercel)
+
 ---
 
 ## Qué es este proyecto
@@ -90,9 +95,10 @@ orange-juice-studio/
 ### 🔄 En proceso
 - Revisión y mejora de la landing page
 - Primer calendario de contenido mensual
+- Bot de WhatsApp con Claude (`api/whatsapp.js`) — falta configurar variables de entorno en Vercel (`ANTHROPIC_API_KEY`, `WHATSAPP_TOKEN`, `WHATSAPP_VERIFY_TOKEN`) y el webhook en Meta
 
 ### 📋 Pendiente
-- [ ] Configurar dominio personalizado (actualmente en *.vercel.app)
+- [ ] Conectar dominio propio comprado (por ahora el link oficial es orangejuicestudio.vercel.app)
 - [ ] Agregar material de portafolio real (imágenes y videos)
 - [ ] Conectar links de redes sociales en footer de landing
 - [ ] Crear primer calendario de contenido (julio 2026)
